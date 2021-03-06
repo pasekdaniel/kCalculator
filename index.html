@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>🔥 kCalculator | Fitness Calculator</title>
+</head>
+<body>
+    <main>
+    <h1>kCalculator</h1>
+    <h2><em>TDEE CALCULATOR</em></h2>
+    </main>
+        <div id="form">
+            <form action="">
+                <div class="sex">
+                <label for="sex">Sex: </label>
+                <div class="radio-container" id="sex">
+                    <input type="radio" id="male" name="sex" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="sex" value="female">
+                    <label for="female">Female</label>
+                </div>
+                </div>
+                <div class="rest">
+                <label class="age-label" for="age">Age: </label>
+                <input maxlength="3" type="text" inputmode="numeric" pattern="[0-9]*" name="age" id="age"><br>
+                <label for="weight">Weight (kg): </label>
+                <input maxlength="3" type="text" inputmode="numeric" pattern="[0-9]*" name="weight" id="weight"><br>
+                <label for="height">Height (cm): </label>
+                <input maxlength="3" type="text" inputmode="numeric" pattern="[0-9]*" name="height" id="height"><br>
+                <div id="activityfactor">
+                    <label for="af">Activity Factor: </label>
+                    <select name="af" id="af">
+                        <option id="sedentary" title="Limited Exercise" name="af" value="">Sedentary</option>
+                        <option id="lightlyactive" title="Light Exercise Most Days of the Week" name="af" value="">Lightly Active</option>
+                        <option id="moderatelyactive" title="Moderate Exercise Most Days of the Week" name="af" value="">Moderately Active</option>
+                        <option id="veryactive" title="Hard Exercise Every Day" name="af" value="">Very Active</option>
+                        <option id="extraactive" title="Strenuous Exercise Two or More Times per Day" name="af" value="">Extra Active</option>
+                    </select><label id="af-tooltip"> ?</label>
+                </div>
+                </div>
+                <button type="button" value="kCalculate" id="btn">Calculate</button>
+            </form>
+            
+    </div>
+    <div id="result"></div>
+    <section class="footer">
+        <footer>
+            <p>&lt; developed by tushkaftw &copy; <script>document.write(Date().split` `[3])</script> /&gt;</p>
+        </footer>
+    </section>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script>
+        tippy('#af-tooltip', {
+        content: '<strong>Sedentary</strong> - <em>Limited Exercise</em> <br> <strong>Lightly Active</strong> - <em>Light Exercise Most Days of the Week</em> <br> <strong>Moderately Active</strong> - <em>Moderate Exercise Most Days of the Week</em> <br> <strong>Very Active</strong> - <em>Hard Exercise Every Day</em> <br> <strong>Extra Active</strong> - <em>Strenuous Exercise Two or More Times per Day</em>',
+        allowHTML: true,
+        interactive: true,
+        placement: 'right',
+      });
+    </script>
+    <script src="./scripts/app.js"></script>
+</body>
+</html>
