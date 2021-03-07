@@ -24,6 +24,7 @@ main {
   flex-direction: column;
   align-items: center;
 }
+
 #form {
   display: flex;
   justify-content: center;
@@ -31,6 +32,78 @@ main {
   min-height: 50vh;
   font-size: $medium-font;
   flex-direction: column;
+}
+
+.main {
+  min-height: 100vh;
+}
+.faq {
+  background: $main-color;
+  color: white;
+  padding: 50px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  h3 {
+    font-size: 3rem;
+  }
+  p {
+    font-size: 2rem;
+  }
+}
+
+.contact {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $main-color;
+  padding: 50px;
+  h1 {
+    padding: 25px;
+  }
+  form {
+    display: flex;
+    min-height: 80vh;
+    flex-direction: column;
+    justify-content: center;
+  }
+  label {
+    font-size: $small-font;
+  }
+  input[type="text"],
+  input[type="email"] {
+    width: 30rem;
+  }
+  textarea {
+    font-size: $small-font;
+    font-family: $main-font;
+    border-radius: 10px;
+    border: 2px solid $main-color;
+    padding: 10px;
+  }
+  .message-text {
+    height: 30rem;
+  }
+  .button-contact {
+    padding: 10px;
+    font-size: $medium-font;
+    border: 2px solid $main-color;
+    background: none;
+    border-radius: 20px;
+    font-family: $main-font;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    color: $main-color;
+    transition: all 0.242069s;
+    &:hover {
+      background: $main-color;
+      color: white;
+      cursor: pointer;
+    }
+  }
 }
 
 #result {
@@ -81,7 +154,8 @@ input[type="radio"] {
     background: $main-color;
   }
 }
-input[type="text"] {
+input[type="text"],
+input[type="email"] {
   padding: 10px;
   margin: 2px;
   width: 4.869rem;
@@ -142,8 +216,11 @@ h1 {
 h2 {
   font-size: $medium-font;
   font-weight: 400;
+}
+.sub-text {
   letter-spacing: 0.25rem;
 }
+
 footer {
   min-height: 4vh;
   background: $main-color;
@@ -151,14 +228,8 @@ footer {
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
   font-size: 1.5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   text-align: center;
   position: fixed;
@@ -167,6 +238,140 @@ footer {
   left: 0;
 }
 a {
-  color: white;
+  color: $main-color;
   text-decoration: none;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.switch-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.switch {
+  margin: 0px 10px;
+}
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  border: 2px solid $main-color;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 2px;
+  bottom: 2px;
+  background-color: $main-color;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: white;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+@media (max-width: 550px) {
+  .sex {
+    flex-direction: column;
+  }
+  .rest,
+  #activityfactor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  footer,
+  #af-tooltip {
+    display: none;
+  }
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #btn {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    background: $main-color;
+    color: white;
+  }
+  main,
+  #result {
+    transform: scale(75%);
+    min-height: 1px;
+  }
+}
+@media (max-width: 340px) {
+  .radio-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .sub-text {
+    display: none;
+  }
+}
+@media (max-width: 470px) {
+  .contact {
+    h1 {
+      transform: scale(75%);
+      text-align: center;
+    }
+    h2 {
+      display: none;
+    }
+  }
+}
+@media (max-width: 400px) {
+  form {
+    width: 100%;
+  }
+  input[type="text"],
+  input[type="email"] {
+    max-width: 100%;
+  }
 }

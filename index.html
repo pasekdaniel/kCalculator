@@ -8,28 +8,37 @@
     <title>🔥 kCalculator | Fitness Calculator</title>
 </head>
 <body>
+    <section class="main">
     <main>
     <h1>kCalculator</h1>
-    <h2><em>TDEE CALCULATOR</em></h2>
+    <h2 class="sub-text"><em>TDEE CALCULATOR</em></h2>
     </main>
         <div id="form">
             <form action="">
-                <div class="sex">
-                <label for="sex">Sex: </label>
-                <div class="radio-container" id="sex">
-                    <input type="radio" id="male" name="sex" value="male">
-                    <label for="male">Male</label>
-                    <input type="radio" id="female" name="sex" value="female">
-                    <label for="female">Female</label>
+                <div class="switch-div">
+                <label for="switch">Metric</label>
+                <label name="switch" class="switch">
+                    <input id="units" type="checkbox">
+                    <span class="slider round"></span>
+                  </label>
+                <label for="switch">Imperial</label>
                 </div>
+                <div class="sex">
+                    <label for="sex">Sex: </label>
+                    <div class="radio-container" id="sex">
+                        <input type="radio" id="male" name="sex" value="male">
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" name="sex" value="female">
+                        <label for="female">Female</label>
+                    </div>
                 </div>
                 <div class="rest">
                 <label class="age-label" for="age">Age: </label>
-                <input maxlength="3" type="text" inputmode="numeric" pattern="[0-9]*" name="age" id="age"><br>
-                <label for="weight">Weight (kg): </label>
-                <input maxlength="3" type="text" inputmode="numeric" pattern="[0-9]*" name="weight" id="weight"><br>
-                <label for="height">Height (cm): </label>
-                <input maxlength="3" type="text" inputmode="numeric" pattern="[0-9]*" name="height" id="height"><br>
+                <input placeholder="y.o." maxlength="3" type="text" inputmode="numeric" ame="age" id="age"> <br>
+                <label for="weight">Weight: </label>
+                <input maxlength="3" type="text" inputmode="numeric" name="weight" id="weight"><br>
+                <label for="height">Height: </label>
+                <input maxlength="3" type="text" inputmode="numeric" name="height" id="height"><br>
                 <div id="activityfactor">
                     <label for="af">Activity Factor: </label>
                     <select name="af" id="af">
@@ -41,11 +50,37 @@
                     </select><label id="af-tooltip"> ?</label>
                 </div>
                 </div>
-                <button type="button" value="kCalculate" id="btn">Calculate</button>
+                <div class="btn">
+                    <button type="button" value="kCalculate" id="btn">Calculate</button>
+                </div>
             </form>
             
     </div>
     <div id="result"></div>
+    </section>
+    <section class="faq">
+        <h3>What is TDEE?</h3>
+        <p>TDEE = Total Daily Energy Expenditure. <br />It is an estimation of the total energy a person uses in a day.</p>
+        <br>
+        <h3>How Do I Lose Weight?</h3>
+        <p>To lose weight, 500 kcal / 2000 kJ deficit is usually a good place to start.<br /> Simply calculate your TDEE above and then subtract 500 kcal from it - the result is going to be your daily calorie income to lose weight.</p>
+        <br />
+        <h3>How Do I Gain Weight?</h3>
+        <p>To gain weight, 500 kcal / 2000 kJ surplus is usually a good place to start.<br /> Simply calculate your TDEE above and then add 500 kcal to it - the result is going to be your daily calorie income to gain weight.</p>
+    </section>
+    <section class="contact">
+        <h1>Contact Me</h1>
+        <h2>Do you have any feedback or suggestions for this app? Please fill out the form below.</h2>
+        <form action="https://formspree.io/f/meqpbywg" method="POST">
+            <label for="name">Name: </label><br>
+            <input name="name" type="text"><br >
+            <label for="_replyto">E-Mail: </label><br>
+            <input name="_replyto" type="email"><br>
+            <label for="message">Message: </label><br>
+            <textarea class="message-text" name="message" type="text"></textarea><br>
+            <button name="submit" type="submit" class="button-contact">Send</button>
+         </form>
+    </section>
     <section class="footer">
         <footer>
             <p>&lt; developed by tushkaftw &copy; <script>document.write(Date().split` `[3])</script> /&gt;</p>
@@ -62,5 +97,6 @@
       });
     </script>
     <script src="./scripts/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/translater.js/1.0.12/translater.min.js" integrity="sha512-lVd8Ov3O+4Ubc0HN0IKhjbP4nOg7MDoQORI2tpkWSdRr3440zt31uR+lgO9QNDGrBUjq/hcsMjQDVux/02142w==" crossorigin="anonymous"></script>
 </body>
 </html>
