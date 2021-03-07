@@ -31,7 +31,31 @@ main {
   align-items: center;
   min-height: 50vh;
   font-size: $medium-font;
-  flex-direction: column;
+  .age-group {
+    display: inline-block;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    .age-label {
+      line-height: 50px;
+    }
+  }
+  .weight-group {
+    display: inline-block;
+    align-items: center;
+    width: 100%;
+    .weight-label {
+      line-height: 50px;
+    }
+  }
+  .height-group {
+    display: inline-block;
+    align-items: center;
+    width: 100%;
+    .height-label {
+      line-height: 50px;
+    }
+  }
 }
 
 .main {
